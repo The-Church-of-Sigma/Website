@@ -1,0 +1,73 @@
+.hero-section {
+    position: relative;
+    height: 92vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, white, #ffffff);
+}
+
+.gradient {
+  height: 50px;
+  background: linear-gradient(#ffffff, #e3e3e3);
+}
+
+.text-overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.text-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+.text-overlay h1, .text-overlay p {
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.background-pattern {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/sigma.svg') repeat;
+    background-size: 182px 182px; /* Adjust size as needed */
+    opacity: 0.7;
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.background-bottom-text {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+    padding: 50px;
+    background: #e3e3e3;
+}
