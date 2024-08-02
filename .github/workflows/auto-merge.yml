@@ -27,5 +27,5 @@ jobs:
     - name: Merge main into prod
       run: |
         git checkout prod
-        git merge main
+        git merge main --allow-unrelated-histories
         git push origin prod
