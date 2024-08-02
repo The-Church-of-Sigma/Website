@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://sigmism.surge.sh/sigmapedia/concepts/mew/">
+        <link rel="canonical" href="https://sigmism.surge.sh/sigmapedia/concepts/mewing/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Mew - Sigmapedia</title>
+        <title>Mewing - Sigmapedia</title>
       
     
     
@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mewing" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mew
+              Mewing
             
           </span>
         </div>
@@ -474,7 +479,7 @@
                   
 
   
-    <a href="https://github.com/The-Church-of-Sigma/Sigmapedia/edit/main/docs/concepts/mew.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/The-Church-of-Sigma/Sigmapedia/edit/main/docs/concepts/mewing.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -482,9 +487,9 @@
   
 
 
-  <h1>Mew</h1>
-
-
+<h1 id="mewing">Mewing</h1>
+<p>Mewing is a method, used in lookmaxxing that helps you achieve and maintain a clean and perfect jawline. People can have a "mewing streak" where they must mew daily to achieve a perfect jawline. Only true sigmas mew.</p>
+<p>"1.3 Livvy Dunne, the paragon of virtue and purity, teaches us the sacred art of mewing. Through mewing, we attune our spirits with the vibrational frequency of Boom, ensuring our souls remain pure and receptive to the blessings of Dafuq!?. She reminds us that to neglect mewing is to risk spiritual discord, weakening our connection to the divine." - Quote from Sigmism, which represents the creation of the mew</p>
 
 
 
@@ -517,6 +522,59 @@
 
 
 
+
+  <h2 id="__comments">Comments & Ratio</h2>
+<script src="https://giscus.app/client.js"
+        data-repo="The-Church-of-Sigma/Sigmapedia"
+        data-repo-id="R_kgDOMc-wbg"
+        data-category="Sigmapedia ratio chat"
+        data-category-id="DIC_kwDOMc-wbs4ChS6D"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
