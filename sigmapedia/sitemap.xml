@@ -65,4 +65,14 @@
          <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://sigmism.surge.sh/sigmapedia/scriptures/</loc>
+         <lastmod>2024-08-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sigmism.surge.sh/sigmapedia/traditions/</loc>
+         <lastmod>2024-08-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
