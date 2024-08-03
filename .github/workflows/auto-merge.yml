@@ -20,7 +20,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
     - name: Fetch all branches
       run: git fetch --all
 
@@ -28,4 +27,9 @@ jobs:
       run: |
         git checkout prod
         git merge main --allow-unrelated-histories
-        git push origin prod
+
+    - name: Push changes
+      env:
+        PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: |
+        git push https://$PERSONAL_ACCESS_TOKEN@github.com/The-Church-of-Sigma/Website.git prod
