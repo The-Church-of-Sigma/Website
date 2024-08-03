@@ -1,12 +1,9 @@
 name: Auto Merge Main to Prod
 
 on:
-  schedule:
-    # Run at 10am, 5pm, 8:30pm and 11:30pm AEST. For AEDT, add 1hr. (Code is in UTC time)
-    - cron: '0 0 * * *' # 10:00 AM AEST / 11:00 AM AEDT
-    - cron: '0 7 * * *' # 5:00 PM AEST / 6:00 PM AEDT
-    - cron: '30 10 * * *' # 8:30 PM AEST / 9:30 PM AEDT
-    - cron: '30 13 * * *' # 11:30 PM AEST / 12:30 PM AEDT
+  push:
+    branches:
+      - main
 
 jobs:
   merge:
