@@ -9,27 +9,14 @@ on:
     - cron: '30 13 * * *' # 11:30 PM AEST / 12:30 PM AEDT
 
 jobs:
-  merge:
+  build:
     runs-on: ubuntu-latest
-
+    name: Deploying to surge
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Git
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-    - name: Fetch all branches
-      run: git fetch --all
-
-    - name: Merge main into prod
-      run: |
-        git checkout prod
-        git merge main --allow-unrelated-histories
-
-    - name: Push changes
-      env:
-        PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      run: |
-        git push https://$PERSONAL_ACCESS_TOKEN@github.com/The-Church-of-Sigma/Website.git prod
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+      - run: npm install -g surge
+      - run: surge . https://sigmism.surge.sh --token ${{ secrets.SURGE_TOKEN }}
