@@ -10,9 +10,12 @@ body {
 
 #book {
     display: flex;
-    width: 80%;
-    height: 80%;
     border: 1px solid #000;
+    /* Keep aspect ratio 1.414:1 */
+    width: calc((100vh - 40px) * 1.414);
+    height: calc(100vh - 40px);
+    max-width: 80vw;
+    max-height: 80vh;
 }
 
 .page {

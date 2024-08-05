@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleVideoButton = document.getElementById('toggle-video');
     const prevPageButton = document.getElementById('prev-page');
     const nextPageButton = document.getElementById('next-page');
+    const book = document.getElementById('book');
     const videoClips = ['clip1.mp4'];
     let currentPage = 0;
     let pages = [];
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let pageIndex = 0;
         let currentHeight = 0;
         const pages = [[]];
-        
+
         paragraphs.forEach(paragraph => {
             tempElement.innerHTML = paragraph;
             const paragraphHeight = tempElement.clientHeight;
@@ -53,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (index >= 0 && index < pages.length) {
             currentPage = index;
             leftPage.innerHTML = pages[currentPage].join('<p>');
+            if (!videoEnabled && currentPage + 1 < pages.length) {
+                rightPage.innerHTML = pages[currentPage + 1].join('<p>');
+            } else {
+                rightPage.innerHTML = '';
+                if (videoEnabled) {
+                    rightPage.appendChild(videoElement);
+                }
+            }
         }
     }
 
@@ -62,26 +71,52 @@ document.addEventListener('DOMContentLoaded', () => {
         videoElement.play();
     }
 
+    function adjustBookSize() {
+        const aspectRatio = 1.414;
+        const maxWidth = window.innerWidth * 0.8;
+        const maxHeight = window.innerHeight * 0.8;
+        let bookWidth = maxWidth;
+        let bookHeight = maxWidth / aspectRatio;
+
+        if (bookHeight > maxHeight) {
+            bookHeight = maxHeight;
+            bookWidth = maxHeight * aspectRatio;
+        }
+
+        book.style.width = `${bookWidth}px`;
+        book.style.height = `${bookHeight}px`;
+    }
+
     toggleVideoButton.addEventListener('click', () => {
         videoEnabled = !videoEnabled;
         if (videoEnabled) {
-            playRandomVideo();
+            rightPage.innerHTML = '';
+            rightPage.appendChild(videoElement);
+            renderPage(currentPage);
         } else {
             videoElement.src = '';
+            renderPage(currentPage);
         }
+        playRandomVideo();
     });
 
     prevPageButton.addEventListener('click', () => {
-        if (currentPage > 0) {
+        if (videoEnabled && currentPage > 0) {
             renderPage(currentPage - 1);
+        } else if (!videoEnabled && currentPage > 1) {
+            renderPage(currentPage - 2);
         }
     });
 
     nextPageButton.addEventListener('click', () => {
-        if (currentPage < pages.length - 1) {
+        if (videoEnabled && currentPage < pages.length - 1) {
             renderPage(currentPage + 1);
+        } else if (!videoEnabled && currentPage < pages.length - 2) {
+            renderPage(currentPage + 2);
         }
     });
 
+    window.addEventListener('resize', adjustBookSize);
+    adjustBookSize();
     playRandomVideo();
 });
