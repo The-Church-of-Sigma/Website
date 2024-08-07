@@ -1,3 +1,7 @@
+#navbar {
+    display: block;
+}
+
 .hero-section {
     position: relative;
     height: 92vh;
