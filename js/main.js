@@ -1,3 +1,8 @@
+// Helper function
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.visibility = 'visible';
+});
+
 // Link stylesheets, fonts & head stuff
 var icon = document.createElement('link');
 icon.setAttribute('rel', 'favicon');

@@ -38,6 +38,13 @@ h1 {
     color: black;
 }
 
+h2 {
+    font-family: "Righteous", "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: black;
+}
+
 /* Navbar styles */
 #navbar {
   display: block;

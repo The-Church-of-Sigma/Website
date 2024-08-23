@@ -2,13 +2,13 @@
 # The gitignore to end all gitignores #
 # # # # # # # # # # # # # # # # # # # #
 
-#               v 1.0                 #
+#               v 1.1                 #
 #   increase when /\ updated, also update other ones
 
 # build output
 dist/
 
-# generated types
+# Astro generated types
 .astro/
 
 # dependencies
@@ -25,7 +25,7 @@ pnpm-debug.log*
 .env.production
 
 # macOS-specific files
-.DS_Store
+**/.DS_Store
 
 # Editor directories and files
 .idea
