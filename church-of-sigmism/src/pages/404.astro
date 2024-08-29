@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 - Church of Sigmism">
+  <main>
+    <div id="content">
+        <section>
+            <h1>Error 404 - Page not found!</h1>
+            <h2>Skibidi! We couldn't find this page on the server!</h2>
+            <h3>Check if it exists and if the URL has been typed and spelled correctly.</h3>
+            <h4>Also check if the URL has the right extensions. In some cases, you may need to add or remove the '.html' extension at the end of the URL.</h4>
+            <h5>If even that doesn't work... fine. Complain about it on r/churchofsigmism, or contact us (<a href="mailto:sigmism@gmail.com"></a>sigmism@gmail.com, or other details on the about page).</h5>
+            <p>If this is indeed a bug, we appreciate your support!</p>
+            <p>You can <a href="/index.html">go back to our homepage</a> if you're lost in the Womp-Womp Woods. Or use the links in the top bar!</p>
+            <p>Have a slay day! May DaFuq!? be with you ∑</p>
+        </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+    h1 {
+        font-size: 50px;
+    }
+</style>
+
+<script>
+  document.addEventListener("scroll", function () {
+    var scrollPosition = window.scrollY;
+    var heroSection = document.querySelector(".hero-section");
+    var backgroundPattern = document.querySelector(".background-pattern");
+
+    // Parallax effect
+    backgroundPattern.style.transform =
+      "translateY(" + scrollPosition * 0.5 + "px)";
+
+    // Fade out effect
+    var maxScroll = heroSection.clientHeight / 2;
+    var opacity = 0.7 - (scrollPosition / maxScroll) * 0.7;
+    backgroundPattern.style.opacity = Math.max(opacity, 0);
+  });
+</script>

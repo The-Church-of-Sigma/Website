@@ -34,8 +34,7 @@ import Navbar from "../components/Navbar.astro";
 </html>
 <style is:global>
   /* All elements */
-  body,
-  html {
+  body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -45,6 +44,11 @@ import Navbar from "../components/Navbar.astro";
     font-style: normal;
     color: black;
   }
+
+  #content {
+    padding: 50px;
+    background: #e3e3e3;
+}
 
   /* ∑ Typical css for elements ∑ */
   p {
@@ -71,30 +75,30 @@ import Navbar from "../components/Navbar.astro";
   /* Navbar styles */
   #navbar {
     display: block;
-  }
-
-  #main-navbar {
     position: sticky;
     position: -webkit-sticky;
     position: -moz-sticky;
     position: -ms-sticky;
-    background-color: whitesmoke;
-    overflow: hidden;
+    top: 0;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    top: 0;
-    height: 60px;
+    height: 70px;
     width: 100vw;
+    z-index: 4;
+  }
+  #main-nav-group {
+    display: block;
+    background-color: whitesmoke;
   }
 
-  #main-navbar li {
+  #main-nav-group li {
     float: left;
     margin-left: 10px;
     margin-top: 10px;
   }
 
-  #main-navbar li a {
+  #main-nav-group li a {
     display: block;
     background-color: rgb(237, 237, 237);
     color: black;
@@ -105,17 +109,24 @@ import Navbar from "../components/Navbar.astro";
     font-family: "Poppins";
   }
 
-  #main-navbar li #active {
+  #main-nav-group li #active {
     background-color: rgb(219, 219, 214);
   }
 
-  #main-navbar :first-child a {
+  #main-nav-group :first-child a {
     background-color: rgb(55, 56, 51);
     color: white;
     font-family: "Righteous";
   }
 
   #navbar-gradient {
+    display: inline-block;
+    background: linear-gradient(rgba(0, 0, 0, 0), whitesmoke);
+    height: 10px;
+    width: 100%;
+}
+
+  #gradient {
     background: linear-gradient(whitesmoke, white);
     height: 10px;
     width: 100%;
